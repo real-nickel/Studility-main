@@ -516,4 +516,5 @@ with app.app_context():
         logger.info('Detected non-sqlite database. Ensure migrations are applied (Alembic / Flyway).')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
